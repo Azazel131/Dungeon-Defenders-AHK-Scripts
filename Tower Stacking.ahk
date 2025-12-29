@@ -1,59 +1,24 @@
-^1::
-    Sleep 16
-    SendInput {1}
-    SendInput {Space}
-return
+#Requires AutoHotkey v2.0
+#Requires AutoHotkey v2.0
+#Requires AutoHotkey v2.0
+#SingleInstance Force
+#HotIf WinActive("ahk_exe DunDefGame.exe")
+# still using ctrl to place towers
+SendMode "Input"
+SetKeyDelay -1, -1
 
-^2::
-    Sleep 16
-    SendInput {2}
-    SendInput {Space}
-return
+Stack(k) {
+    ; overlap: tower hotkey + space
+    Send "{" k " down}{Space down}{Space up}{" k " up}"
+}
 
-^3::
-    Sleep 16
-    SendInput {3}
-    SendInput {Space}
-return
-
-^4::
-    Sleep 16
-    SendInput {4}
-    SendInput {Space}
-return
-
-^5::
-    Sleep 16
-    SendInput {5}
-    SendInput {Space}
-return
-
-^6::
-    Sleep 16
-    SendInput {6}
-    SendInput {Space}
-return
-
-^7::
-    Sleep 16
-	SendInput {7}
-    SendInput {Space}
-return
-
-^8::
-    Sleep 16
-    SendInput {8}
-    SendInput {Space}	
-return
-
-^9::
-    Sleep 16
-    SendInput {9}
-    SendInput {Space}
-return
-
-^0::
-    Sleep 16
-    SendInput {0}
-    SendInput {Space}
-return
+^1::Stack("1")
+^2::Stack("2")
+^3::Stack("3")
+^4::Stack("4")
+^5::Stack("5")
+^6::Stack("6")
+^7::Stack("7")
+^8::Stack("8")
+^9::Stack("9")
+^0::Stack("0")
